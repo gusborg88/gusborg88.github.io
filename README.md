@@ -1,2 +1,2 @@
-I will make websites and keep them here  
-i dont know how to use github  
+Im not gonna use this acutally because it doesnt work how i want it to  
+oh well
