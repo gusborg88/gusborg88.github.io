@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style
+        <style type="text/css">
+@keyframes goofy {
+    0% {perspective-origin: 100% 100%; perspective: 16px}
+    33% {perspective-origin: -100% 100%;}
+    66% {perspective-origin: -100% -100%;}
+    100% {perspective-origin: 100% -100%; perspective: 200px}
+}
+.grass {
+    scale: 16;
+    animation: goofy 4s infinite alternate ease-in;
+    filter: drop-shadow(4px 4px 0px #9bd)
+}
+#sky {
+    width: 100svw;
+    height: 100svh;
+    background-color: lightblue;
+}
+.block {
+    perspective: 64px;
+    width: 24px;
+    height: 24px;
+    perspective-origin: center;
+    translate: 50vw 50vh;
+}
+div * {
+    image-rendering: pixelated;
+    transform-style: preserve-3d;
+    opacity:1;
+    scale: 1;
+    transform-origin: center;
+}
+body * {
+    position: absolute;
+}
+body {
+    margin: 0;
+    height: 100svh;
+    overflow: hidden;
+}
+.grass *:nth-child(1) {
+    content: url(grass-top.webp);
+}
+.grass *:nth-child(n+2):nth-child(-n+5){
+    content: url(grass-side.webp);
+}
+.grass *:nth-child(6) {
+    content: url(dirt.webp);
+}
+.block *:nth-child(1) {
+    translate: 0 -8px;
+    rotate: x 0.25turn;
+    z-index: 1;
+}
+.block *:nth-child(2) {
+    translate: -8px;
+    rotate: y 0.25turn;
+}
+.block *:nth-child(3) {
+    translate: 8px;
+    rotate: y 0.25turn;
+}
+.block *:nth-child(4) {
+    translate: 0 0 -8px;
+    z-index: -1
+}
+.block *:nth-child(5) {
+    translate: 0 0 8px;
+    z-index: 2
+}
+.block *:nth-child(6) {
+    translate: 0 8px 0;
+    rotate: x 0.25turn;
+}
+        </style>
+    </head>
+    <body>
+        <div id="sky"></div>
+        <div class="block grass">
+            <img>
+            <img>
+            <img>
+            <img>
+            <img>
+            <img>
+        </div>
+    </body>
+</html>
